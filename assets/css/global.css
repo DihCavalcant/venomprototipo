@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --vermelho-venom: #D62828;
+    --grafite-escuro: #1A1A1A;
+    --cinza-antracite: #2B2D42;
+    --cinza-medio: #8D99AE;
+    --cinza-gelo: #F4F5F7;
+    --branco: #FFFFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,73 @@
+
+@media (max-width: 768px) {
+    .passos-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .passos-container::before {
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        height: 100%;
+    }
+
+    .numero-wrapper {
+        padding-bottom: 5px;
+        padding-right: 0;
+    }
+  
+    .passo-texto {
+        padding-left: 35px;
+        margin-top: 5px;
+    }
+
+    .hero .container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-height: 300px;
+    }
+
+    .hero-image::before {
+        background: linear-gradient(to top, var(--grafite-escuro) 0%, transparent 100%);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin: 0 auto 30px auto;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    header .btn-outline {
+        display: none;
+    }
+
+    .box-urgencia {
+        padding: 30px 20px;
+    }
+
+    .box-urgencia h3 {
+        font-size: 1.4rem;
+    }
+}
