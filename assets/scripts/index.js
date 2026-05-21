@@ -2,11 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSlide = 1;
   const totalSlides = 5;
   let intervalId;
-  const vimeoPlayers = {}; // Armazena as instâncias dos players do Vimeo
+  const vimeoPlayers = {};
 
-  // Inicializa os players do Vimeo que estão na página
+  // Mapeamento do tempo de duração de cada vídeo (em segundos)
+  // AJUSTE AQUI: Coloque o tempo exato de duração dos seus vídeos do Vimeo
+  const videoDurations = {
+    's2': 15, // Duração do Vídeo 1 (ex: 15 segundos)
+    's3': 30  // Duração do Vídeo 2 (ex: 30 segundos)
+  };
+
+  // Inicializa os players do Vimeo
   document.querySelectorAll(".slide iframe").forEach(iframe => {
-    const slideClass = iframe.closest(".slide").classList[1]; // Pega 's2', 's3', etc.
+    const slideClass = iframe.closest(".slide").classList[1]; // s2, s3...
     if (typeof Vimeo !== "undefined") {
       vimeoPlayers[slideClass] = new Vimeo.Player(iframe);
     }
@@ -29,48 +36,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleSlideChange() {
-    // 1. Pausa TODOS os vídeos do Vimeo antes de focar no atual
-    Object.values(vimeoPlayers).forEach(player => {
-      player.pause().catch(() => {});
-      player.setCurrentTime(0).catch(() => {});
-      player.off("ended"); // Remove ouvintes antigos para não duplicar gatilhos
-    });
+    clearInterval(intervalId);
 
     const currentClass = `s${currentSlide}`;
     const currentPlayer = vimeoPlayers[currentClass];
 
-    // 2. Se o slide atual tiver um vídeo do Vimeo
-    if (currentPlayer) {
-      clearInterval(intervalId); // Para o contador de tempo (o vídeo assume o controle)
+    // Controla o comportamento de reprodução visual de cada um
+    Object.keys(vimeoPlayers).forEach(key => {
+      if (key === currentClass) {
+        // Se mudou para o slide do vídeo, recomeça ele do zero
+        vimeoPlayers[key].setCurrentTime(0).catch(() => {});
+        vimeoPlayers[key].play().catch(() => {});
+      } else {
+        // Pausa os vídeos que não estão na tela
+        vimeoPlayers[key].pause().catch(() => {});
+      }
+    });
 
-      currentPlayer.setMuted(true);
-      currentPlayer.setCurrentTime(0);
+    if (currentPlayer) {
+      // Se for um vídeo, pegamos o tempo definido no objeto lá em cima
+      const duration = (videoDurations[currentClass] || 10) * 1000; 
       
-      currentPlayer.play()
-        .then(() => {
-          // Quando o vídeo do Vimeo terminar, avança para o próximo slide
-          currentPlayer.on("ended", () => {
-            goToNextSlide();
-          });
-        })
-        .catch(err => {
-          console.log("Erro ao reproduzir player do Vimeo:", err);
-          // Se houver bloqueio do navegador, passa em 4 segundos para não travar o slider
-          setTimeout(goToNextSlide, 4000);
-        });
+      // Passa o slide de forma garantida após o tempo de duração do vídeo acabar
+      intervalId = setTimeout(goToNextSlide, duration);
 
     } else {
-      // 3. Se for uma imagem estática, passa após 4 segundos
+      // Se for uma imagem estática (slides 1, 4 e 5), passa após 4 segundos
       intervalId = setInterval(goToNextSlide, 4000);
     }
   }
 
-  // Inicializa o primeiro slide
+  // Inicializa o carrossel
   setTimeout(() => {
     handleSlideChange();
   }, 200);
 
-  // Ouvinte para a navegação manual pelos botões (Labels / Inputs Radio)
+  // Escuta os cliques manuais nos botões redondos de baixo
   document.querySelectorAll('input[name="slide"]').forEach((input, index) => {
     input.addEventListener('change', () => {
       goToSlide(index + 1);
