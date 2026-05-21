@@ -1,14 +1,9 @@
-/* ==========================================================================
-   CORREÇÃO FORÇADA E DEFINITIVA PARA CELULARES
-   ========================================================================== */
 @media screen and (max-width: 768px) {
-    
     body, html {
         overflow-x: hidden !important; 
         max-width: 100% !important;
     }
 
-    /* --- CORREÇÃO DO HEADER (LOGO E BOTÃO ENTRAR EM CONTATO) --- */
     header .container {
         display: flex !important;
         justify-content: space-between !important;
@@ -16,13 +11,11 @@
         padding: 0 15px !important;
     }
 
-    /* Reduz o tamanho da logo para dar espaço ao botão */
     .logo img {
         width: 110px !important; 
         height: auto !important;  
     }
 
-    /* Compacta o botão outline para caber perfeitamente no mobile */
     .btn-outline {
         padding: 6px 12px !important; 
         font-size: 0.75rem !important; 
@@ -30,11 +23,10 @@
         border-width: 1px !important;  
     }
 
-    /* --- CORREÇÃO DA IMAGEM HERO (100% LARGURA) --- */
     .hero .container {
         display: flex !important;
         flex-direction: column-reverse !important; 
-        padding: 0 !important; /* Remove os 20px laterais para a imagem sangrar na borda */
+        padding: 0 !important; 
         width: 100% !important;
         max-width: 100% !important;
     }
@@ -42,7 +34,7 @@
     .hero-image {
         width: 100% !important;
         max-width: 100% !important;
-        left: 0% !important; /* Zera os 20% do desktop */
+        left: 0% !important; 
         margin: 0 !important;
     }
 
@@ -52,7 +44,6 @@
         object-fit: cover !important;
     }
 
-    /* Devolve a margem necessária apenas para o bloco de texto não colar na tela */
     .hero-content {
         max-width: 100% !important;
         padding: 30px 20px 50px 20px !important;
@@ -69,7 +60,6 @@
         margin-bottom: 25px !important;
     }
 
-    /* --- CORREÇÃO DO BLOCO DE PASSOS --- */
     .passos-container {
         display: flex !important;
         flex-direction: column !important;
@@ -87,16 +77,15 @@
         white-space: normal !important;
     }
     
-    /* Container genérico para as demais seções */
     .container {
         padding: 0 15px !important;
         box-sizing: border-box !important;
     }
 
-    /* --- AJUSTE FINO DO SLIDER NO CELULAR --- */
     .slideshow-wrapper {
         height: 240px !important;
     }
+    
     iframe, .vimeo-container {
         min-height: 240px !important;
     }

@@ -57,9 +57,6 @@ h1, h2, h3, h4 {
     box-shadow: none;
 }
 
-/* ==========================================================================
-   HEADER (CABEÇALHO)
-   ========================================================================== */
 header {
     background-color: var(--grafite-escuro);
     padding: 20px 0;
@@ -95,9 +92,6 @@ header .container {
     height: 70px;
 }
 
-/* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
 .hero {
     background-color: var(--grafite-escuro);
     color: var(--branco);
@@ -208,7 +202,6 @@ header .container {
     color: #555;
 }
 
-
 .solucao {
     background-color: var(--grafite-escuro);
     color: var(--branco);
@@ -287,11 +280,10 @@ header .container {
     color: var(--grafite-escuro);
 }
 
-
 .cta-final {
     display: flex;
-    flex-direction: column;    /* Coloca o título por cima e o slider por baixo */
-    align-items: center;       /* Centraliza o conteúdo horizontalmente */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-color: var(--cinza-gelo);
     padding: 20px 20px;
@@ -302,29 +294,29 @@ header .container {
     font-size: 2.2rem;
     font-weight: 900;
     color: var(--grafite-escuro);
-    margin-bottom: 30px;       /* Espaço entre o título "Conheça nosso trabalho" e o slider */
+    margin-bottom: 30px;
 }
 
 .slideshow-wrapper {
     width: 100%;
-    max-width: 750px;          /* TAMANHO MEDIANO CENTRALIZADO */
-    height: 420px;             /* Altura equilibrada para imagens e vídeos */
+    max-width: 750px;
+    height: 420px;
     overflow: hidden;
-    position: relative;        /* Fundamental para prender as bolinhas de navegação cá dentro */
-    border-radius: 6px;       /* Bordas ligeiramente arredondadas para um toque moderno */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra de destaque */
-    background-color: #000;    /* Fundo preto para evitar flashes vazios */
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #000;
 }
 
 .slideshow {
     display: flex;
-    width: 500%;               /* 5 slides = 500% */
+    width: 500%;
     height: 100%;
     transition: transform 0.6s ease;
 }
 
 .slide {
-    width: 20%;                /* Cada slide ocupa 1/5 do espaço do carrossel */
+    width: 20%;
     height: 100%;
     transition: opacity 0.5s;
 }
@@ -332,12 +324,9 @@ header .container {
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* Faz a imagem preencher o espaço sem distorcer */
+    
 }
 
-/* ==========================================================================
-   CONTAINERS DE VÍDEOS (VIMEO)
-   ========================================================================== */
 .vimeo-container {
     width: 100%;
     height: 100%;
@@ -355,9 +344,6 @@ iframe {
     object-fit: cover;
 }
 
-/* ==========================================================================
-   LÓGICA CSS DE TRANSIÇÃO DOS RADIOS
-   ========================================================================== */
 input[type="radio"] {
     display: none;
 }
@@ -368,26 +354,23 @@ input[type="radio"] {
 #slide4:checked ~ .slideshow { transform: translateX(-60%); }
 #slide5:checked ~ .slideshow { transform: translateX(-80%); }
 
-/* ==========================================================================
-   NAVEGAÇÃO MANUAL (BOLINHAS DO SLIDER)
-   ========================================================================== */
 .navigation-manual {
     position: absolute;
     width: 100%;
-    bottom: 20px;              /* Afastamento seguro da borda inferior interna */
+    bottom: 20px;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    z-index: 10;               /* Garante que fica por cima das imagens/vídeos */
+    z-index: 10;
 }
 
 .manual-btn {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5); /* Bolinha desativada mais visível em cima do conteúdo */
+    background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
 }
@@ -396,20 +379,16 @@ input[type="radio"] {
     transform: scale(1.2);
 }
 
-/* Mudança de cor da bolinha ativa baseada no rádio selecionado */
 #slide1:checked ~ .navigation-manual label[for="slide1"],
 #slide2:checked ~ .navigation-manual label[for="slide2"],
 #slide3:checked ~ .navigation-manual label[for="slide3"],
 #slide4:checked ~ .navigation-manual label[for="slide4"],
 #slide5:checked ~ .navigation-manual label[for="slide5"] {
-    background: var(--vermelho-venom, #D62828); /* Destaca a bolinha ativa com a cor da marca */
+    background: var(--vermelho-venom, #D62828);
     width: 14px;
     height: 14px;
 }
 
-/* ==========================================================================
-   FOOTER (RODAPÉ)
-   ========================================================================== */
 footer {
     background-color: #111111;
     color: #888888;
