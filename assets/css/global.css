@@ -7,11 +7,23 @@
 
 :root {
     --vermelho-venom: #D62828;
-    --grafite-escuro: #1A1A1A;
+    --grafite-escuro: #8D99AE;
     --cinza-antracite: #2B2D42;
-    --cinza-medio: #8D99AE;
+    --cinza-medio: ;
     --cinza-gelo: #F4F5F7;
     --branco: #FFFFFF;
+    
+     --cinza-principal: #4A5568;
+    --cinza-principal-hover: #2D3748;
+    
+    --cinza-fundo-escuro: #2D3748;
+    --cinza-fundo-medio: #E2E8F0;
+    --cinza-fundo-claro: #F7FAFC;
+    
+    --cinza-texto-escuro: #1A202C;
+    --cinza-medio-detalhe: #A0AEC0;
+  
+
 }
 
 html {

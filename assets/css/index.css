@@ -1,28 +1,7 @@
-/* ==========================================================================
-   PALETA DE CORES (Ajustada para o Cinza dominando o layout - Sem Preto)
-   ========================================================================== */
-:root {
-    /* Tons de Cinza que agora mandam no site */
-    --cinza-principal: #4A5568;         /* Cinza Concreto (Cor de destaque e ação) */
-    --cinza-principal-hover: #2D3748;   /* Cinza mais escuro para o efeito hover nos botões */
-    
-    /* Substitutos do Preto/Grafite */
-    --cinza-fundo-escuro: #2D3748;      /* Cinza Escuro para seções como Header e Banner (Substitui o preto) */
-    --cinza-fundo-medio: #E2E8F0;       /* Cinza claro para blocos de contraste */
-    --cinza-fundo-claro: #F7FAFC;       /* Cinza Gelo de fundo geral */
-    
-    /* Cores de suporte */
-    --cinza-texto-escuro: #1A202C;      /* Cinza quase preto apenas para leitura confortável de textos */
-    --cinza-medio-detalhe: #A0AEC0;     /* Para detalhes secundários e spans */
-    --branco: #FFFFFF;
-}
 
-/* ==========================================================================
-   ESTILOS GERAIS E CONFIGURAÇÕES BASE
-   ========================================================================== */
 body {
-    background-color: var(--cinza-fundo-claro); /* AJUSTE: Fundo geral em cinza gelo */
-    color: var(--cinza-texto-escuro);           /* AJUSTE: Texto em cinza escuro legível */
+    background-color: var(--cinza-fundo-claro);
+    color: var(--cinza-texto-escuro);
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -41,12 +20,9 @@ h1, h2, h3, h4 {
     padding: 0 20px;
 }
 
-/* ==========================================================================
-   COMPONENTES: BOTÕES
-   ========================================================================== */
 .btn {
     display: inline-block;
-    background-color: var(--cinza-principal); /* AJUSTE: Botão Principal 100% Cinza Concreto */
+    background-color: var(--vermelho-venom);
     color: var(--branco);
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -58,11 +34,11 @@ h1, h2, h3, h4 {
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(74, 85, 104, 0.3); /* AJUSTE: Sombra adaptada para o cinza */
+    box-shadow: 0 4px 15px rgba(74, 85, 104, 0.3);
 }
 
 .btn:hover {
-    background-color: var(--cinza-principal-hover); /* AJUSTE: Hover do botão vai para cinza escuro */
+    background-color: var(--cinza-principal-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(74, 85, 104, 0.5);
 }
@@ -81,16 +57,13 @@ h1, h2, h3, h4 {
     color: var(--cinza-texto-escuro);
 }
 
-/* ==========================================================================
-   HEADER (CABEÇALHO)
-   ========================================================================== */
 header {
-    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Removido o preto, agora é cinza escuro */
+    background-color: var(--cinza-fundo-escuro);
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--cinza-principal); /* AJUSTE: Linha divisória em cinza principal */
+    border-bottom: 2px solid var(--cinza-principal);
 }
 
 header .container {
@@ -111,7 +84,7 @@ header .container {
 }
 
 .logo span {
-    color: var(--cinza-medio-detalhe); /* AJUSTE: Complemento da logo em cinza platinado */
+    color: var(--cinza-medio-detalhe);
 }
 
 .logo img {
@@ -119,11 +92,8 @@ header .container {
     height: 70px;
 }
 
-/* ==========================================================================
-   HERO SECTION (BANNER PRINCIPAL)
-   ========================================================================== */
 .hero {
-    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Fundo do banner mudado de preto para cinza escuro */
+    background-color: var(--cinza-fundo-escuro);
     color: var(--branco);
     position: relative;
     overflow: hidden;
@@ -150,7 +120,7 @@ header .container {
 }
 
 .hero h1 span {
-    color: var(--cinza-medio-detalhe); /* AJUSTE: Destaque "Precisão Militar" em cinza contrastante */
+    color: var(--cinza-medio-detalhe);
 }
 
 .hero p {
@@ -167,7 +137,7 @@ header .container {
     left: 20%;
     display: flex;
     justify-content: flex-end;
-    background-color: var(--cinza-principal); /* AJUSTE: Fundo da imagem alterado para o cinza principal */
+    background-color: var(--cinza-principal);
 }
 
 .hero-image img {
@@ -175,7 +145,7 @@ header .container {
     height: 480px;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%) brightness(65%) contrast(110%); /* AJUSTE: Filtro levemente clareado */
+    filter: grayscale(100%) brightness(65%) contrast(110%);
 }
 
 .hero-image::before {
@@ -185,15 +155,11 @@ header .container {
     left: 0;
     width: 100%;
     height: 100%;
-    /* AJUSTE: O gradiente agora faz o fade para o cinza escuro, eliminando o preto */
     background: linear-gradient(to right, var(--cinza-fundo-escuro) 0%, rgba(45, 55, 72, 0.3) 50%, transparent 100%);
     z-index: 1;
     pointer-events: none;
 }
 
-/* ==========================================================================
-   SEÇÃO PROBLEMA (PROTEÇÃO CONTRA PRAGAS)
-   ========================================================================== */
 .problema {
     padding: 25px 0;
 }
@@ -206,7 +172,7 @@ header .container {
 }
 
 .section-title span {
-    color: var(--cinza-principal); /* AJUSTE: Destaques dos títulos em cinza */
+    color: var(--cinza-principal);
     font-weight: 700;
 }
 
@@ -236,11 +202,8 @@ header .container {
     color: #4A5568;
 }
 
-/* ==========================================================================
-   SEÇÃO SOLUÇÃO (4 PASSOS)
-   ========================================================================== */
 .solucao {
-    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Removido preto do fundo, agora é cinza escuro */
+    background-color: var(--cinza-fundo-escuro);
     color: var(--branco);
     padding: 40px 0;
 }
@@ -268,7 +231,7 @@ header .container {
 .numero-wrapper {
     display: inline-flex;
     align-items: center;
-    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Acompanha o fundo cinza da seção */
+    background-color: var(--cinza-fundo-escuro);
     padding-right: 15px;
 }
 
@@ -276,7 +239,7 @@ header .container {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 900;
-    color: var(--cinza-medio-detalhe); /* AJUSTE: Números em cinza platinado */
+    color: var(--cinza-medio-detalhe);
     margin-right: 8px;
 }
 
@@ -284,7 +247,7 @@ header .container {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: #F4F5F7;   
+    color: #F4F5F7;
     white-space: nowrap;
 }
 
@@ -296,9 +259,57 @@ header .container {
     padding-right: 10px;
 }
 
-/* ==========================================================================
-   SEÇÃO DEPOIMENTOS
-   ========================================================================== */
+.servicos {
+    padding: 60px 0;
+    background-color: var(--branco);
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.servico-card {
+    background-color: var(--cinza-fundo-claro);
+    padding: 40px 25px;
+    border-radius: 6px;
+    border: 1px solid var(--cinza-fundo-medio);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(74, 85, 104, 0.15);
+}
+
+.servico-card h3 {
+    font-size: 1.3rem;
+    color: var(--cinza-texto-escuro);
+    margin-bottom: 15px;
+}
+
+.servico-card p {
+    font-size: 0.95rem;
+    color: var(--cinza-principal);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.servico-card .btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+}
+
 .depoimentos {
     background-color: var(--branco);
     padding: 80px 0;
@@ -320,15 +331,12 @@ header .container {
     color: var(--cinza-texto-escuro);
 }
 
-/* ==========================================================================
-   SEÇÃO SLIDESHOW / CTA FINAL
-   ========================================================================== */
 .cta-final {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--cinza-fundo-medio); /* AJUSTE: Fundo cinza médio para quebrar a monotonia */
+    background-color: var(--cinza-fundo-medio);
     padding: 20px 20px;
     text-align: center;
 }
@@ -348,7 +356,7 @@ header .container {
     position: relative;
     border-radius: 6px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Fundo do player mudado para cinza escuro */
+    background-color: var(--cinza-fundo-escuro);
 }
 
 .slideshow {
@@ -421,7 +429,6 @@ input[type="radio"] {
     transform: scale(1.2);
 }
 
-/* AJUSTE: Bolinhas ativas do slider agora são Cinza Concreto */
 #slide1:checked ~ .navigation-manual label[for="slide1"],
 #slide2:checked ~ .navigation-manual label[for="slide2"],
 #slide3:checked ~ .navigation-manual label[for="slide3"],
@@ -432,11 +439,8 @@ input[type="radio"] {
     height: 14px;
 }
 
-/* ==========================================================================
-   FOOTER (RODAPÉ)
-   ========================================================================== */
 footer {
-    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Footer mudado de preto absoluto para cinza escuro corporativo */
+    background-color: var(--cinza-fundo-escuro);
     color: var(--cinza-medio-detalhe);
     padding: 40px 0 20px 0;
     font-size: 0.9rem;
