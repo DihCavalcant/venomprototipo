@@ -1,6 +1,28 @@
+/* ==========================================================================
+   PALETA DE CORES (Ajustada para o Cinza dominando o layout - Sem Preto)
+   ========================================================================== */
+:root {
+    /* Tons de Cinza que agora mandam no site */
+    --cinza-principal: #4A5568;         /* Cinza Concreto (Cor de destaque e ação) */
+    --cinza-principal-hover: #2D3748;   /* Cinza mais escuro para o efeito hover nos botões */
+    
+    /* Substitutos do Preto/Grafite */
+    --cinza-fundo-escuro: #2D3748;      /* Cinza Escuro para seções como Header e Banner (Substitui o preto) */
+    --cinza-fundo-medio: #E2E8F0;       /* Cinza claro para blocos de contraste */
+    --cinza-fundo-claro: #F7FAFC;       /* Cinza Gelo de fundo geral */
+    
+    /* Cores de suporte */
+    --cinza-texto-escuro: #1A202C;      /* Cinza quase preto apenas para leitura confortável de textos */
+    --cinza-medio-detalhe: #A0AEC0;     /* Para detalhes secundários e spans */
+    --branco: #FFFFFF;
+}
+
+/* ==========================================================================
+   ESTILOS GERAIS E CONFIGURAÇÕES BASE
+   ========================================================================== */
 body {
-    background-color: var(--cinza-gelo);
-    color: var(--cinza-antracite);
+    background-color: var(--cinza-fundo-claro); /* AJUSTE: Fundo geral em cinza gelo */
+    color: var(--cinza-texto-escuro);           /* AJUSTE: Texto em cinza escuro legível */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -19,9 +41,12 @@ h1, h2, h3, h4 {
     padding: 0 20px;
 }
 
+/* ==========================================================================
+   COMPONENTES: BOTÕES
+   ========================================================================== */
 .btn {
     display: inline-block;
-    background-color: var(--vermelho-venom);
+    background-color: var(--cinza-principal); /* AJUSTE: Botão Principal 100% Cinza Concreto */
     color: var(--branco);
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -33,13 +58,13 @@ h1, h2, h3, h4 {
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(214, 40, 40, 0.3);
+    box-shadow: 0 4px 15px rgba(74, 85, 104, 0.3); /* AJUSTE: Sombra adaptada para o cinza */
 }
 
 .btn:hover {
-    background-color: #b51e1e;
+    background-color: var(--cinza-principal-hover); /* AJUSTE: Hover do botão vai para cinza escuro */
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(214, 40, 40, 0.5);
+    box-shadow: 0 6px 20px rgba(74, 85, 104, 0.5);
 }
 
 .btn-outline {
@@ -53,17 +78,19 @@ h1, h2, h3, h4 {
 
 .btn-outline:hover {
     background-color: var(--branco);
-    color: var(--grafite-escuro);
-    box-shadow: none;
+    color: var(--cinza-texto-escuro);
 }
 
+/* ==========================================================================
+   HEADER (CABEÇALHO)
+   ========================================================================== */
 header {
-    background-color: var(--grafite-escuro);
+    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Removido o preto, agora é cinza escuro */
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--vermelho-venom);
+    border-bottom: 2px solid var(--cinza-principal); /* AJUSTE: Linha divisória em cinza principal */
 }
 
 header .container {
@@ -84,7 +111,7 @@ header .container {
 }
 
 .logo span {
-    color: var(--vermelho-venom);
+    color: var(--cinza-medio-detalhe); /* AJUSTE: Complemento da logo em cinza platinado */
 }
 
 .logo img {
@@ -92,8 +119,11 @@ header .container {
     height: 70px;
 }
 
+/* ==========================================================================
+   HERO SECTION (BANNER PRINCIPAL)
+   ========================================================================== */
 .hero {
-    background-color: var(--grafite-escuro);
+    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Fundo do banner mudado de preto para cinza escuro */
     color: var(--branco);
     position: relative;
     overflow: hidden;
@@ -120,14 +150,14 @@ header .container {
 }
 
 .hero h1 span {
-    color: var(--vermelho-venom);
+    color: var(--cinza-medio-detalhe); /* AJUSTE: Destaque "Precisão Militar" em cinza contrastante */
 }
 
 .hero p {
     font-size: 1.2rem;
     max-width: 100%;
     margin: 0 0 40px 0;
-    color: #dddddd;
+    color: #e2e8f0;
 }
 
 .hero-image {
@@ -137,7 +167,7 @@ header .container {
     left: 20%;
     display: flex;
     justify-content: flex-end;
-    background-color: red;
+    background-color: var(--cinza-principal); /* AJUSTE: Fundo da imagem alterado para o cinza principal */
 }
 
 .hero-image img {
@@ -145,7 +175,7 @@ header .container {
     height: 480px;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%) brightness(55%) contrast(115%); 
+    filter: grayscale(100%) brightness(65%) contrast(110%); /* AJUSTE: Filtro levemente clareado */
 }
 
 .hero-image::before {
@@ -155,11 +185,15 @@ header .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, var(--grafite-escuro) 0%, rgba(26, 26, 26, 0.3) 50%, transparent 100%);
+    /* AJUSTE: O gradiente agora faz o fade para o cinza escuro, eliminando o preto */
+    background: linear-gradient(to right, var(--cinza-fundo-escuro) 0%, rgba(45, 55, 72, 0.3) 50%, transparent 100%);
     z-index: 1;
     pointer-events: none;
 }
 
+/* ==========================================================================
+   SEÇÃO PROBLEMA (PROTEÇÃO CONTRA PRAGAS)
+   ========================================================================== */
 .problema {
     padding: 25px 0;
 }
@@ -168,11 +202,11 @@ header .container {
     text-align: center;
     font-size: 2.2rem;
     font-weight: 900;
-    color: var(--grafite-escuro);
+    color: var(--cinza-texto-escuro);
 }
 
 .section-title span {
-    color: var(--vermelho-venom);
+    color: var(--cinza-principal); /* AJUSTE: Destaques dos títulos em cinza */
     font-weight: 700;
 }
 
@@ -194,16 +228,19 @@ header .container {
 .card-problema h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;
-    color: var(--grafite-escuro);
+    color: var(--cinza-texto-escuro);
 }
 
 .card-problema p {
     font-size: 0.95rem;
-    color: #555;
+    color: #4A5568;
 }
 
+/* ==========================================================================
+   SEÇÃO SOLUÇÃO (4 PASSOS)
+   ========================================================================== */
 .solucao {
-    background-color: var(--grafite-escuro);
+    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Removido preto do fundo, agora é cinza escuro */
     color: var(--branco);
     padding: 40px 0;
 }
@@ -231,7 +268,7 @@ header .container {
 .numero-wrapper {
     display: inline-flex;
     align-items: center;
-    background-color: var(--grafite-escuro);
+    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Acompanha o fundo cinza da seção */
     padding-right: 15px;
 }
 
@@ -239,7 +276,7 @@ header .container {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 900;
-    color: #D62828;
+    color: var(--cinza-medio-detalhe); /* AJUSTE: Números em cinza platinado */
     margin-right: 8px;
 }
 
@@ -253,19 +290,22 @@ header .container {
 
 .passo-texto {
     font-size: 15px;
-    color: #F4F5F7;
+    color: #E2E8F0;
     line-height: 1.5;
     margin-top: 12px;
     padding-right: 10px;
 }
 
+/* ==========================================================================
+   SEÇÃO DEPOIMENTOS
+   ========================================================================== */
 .depoimentos {
     background-color: var(--branco);
     padding: 80px 0;
 }
 
 .card-depoimento {
-    background-color: var(--cinza-gelo);
+    background-color: var(--cinza-fundo-claro);
     padding: 30px;
     border-radius: 6px;
     font-style: italic;
@@ -277,15 +317,18 @@ header .container {
     margin-top: 15px;
     font-weight: 600;
     font-style: normal;
-    color: var(--grafite-escuro);
+    color: var(--cinza-texto-escuro);
 }
 
+/* ==========================================================================
+   SEÇÃO SLIDESHOW / CTA FINAL
+   ========================================================================== */
 .cta-final {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--cinza-gelo);
+    background-color: var(--cinza-fundo-medio); /* AJUSTE: Fundo cinza médio para quebrar a monotonia */
     padding: 20px 20px;
     text-align: center;
 }
@@ -293,7 +336,7 @@ header .container {
 .cta-final h1 {
     font-size: 2.2rem;
     font-weight: 900;
-    color: var(--grafite-escuro);
+    color: var(--cinza-texto-escuro);
     margin-bottom: 30px;
 }
 
@@ -304,8 +347,8 @@ header .container {
     overflow: hidden;
     position: relative;
     border-radius: 6px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    background-color: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Fundo do player mudado para cinza escuro */
 }
 
 .slideshow {
@@ -324,7 +367,6 @@ header .container {
 .slide img {
     width: 100%;
     height: 100%;
-    
 }
 
 .vimeo-container {
@@ -333,7 +375,7 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #000;
+    background: var(--cinza-fundo-escuro);
 }
 
 iframe {
@@ -379,22 +421,26 @@ input[type="radio"] {
     transform: scale(1.2);
 }
 
+/* AJUSTE: Bolinhas ativas do slider agora são Cinza Concreto */
 #slide1:checked ~ .navigation-manual label[for="slide1"],
 #slide2:checked ~ .navigation-manual label[for="slide2"],
 #slide3:checked ~ .navigation-manual label[for="slide3"],
 #slide4:checked ~ .navigation-manual label[for="slide4"],
 #slide5:checked ~ .navigation-manual label[for="slide5"] {
-    background: var(--vermelho-venom, #D62828);
+    background: var(--cinza-principal); 
     width: 14px;
     height: 14px;
 }
 
+/* ==========================================================================
+   FOOTER (RODAPÉ)
+   ========================================================================== */
 footer {
-    background-color: #111111;
-    color: #888888;
+    background-color: var(--cinza-fundo-escuro); /* AJUSTE: Footer mudado de preto absoluto para cinza escuro corporativo */
+    color: var(--cinza-medio-detalhe);
     padding: 40px 0 20px 0;
     font-size: 0.9rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--cinza-principal);
 }
 
 .footer-content {
@@ -423,6 +469,6 @@ footer {
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #222;
+    border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.8rem;
 }
